@@ -4,7 +4,6 @@ const path = require('path')
 const logger = require('morgan')
 const favicon = require('serve-favicon')
 
-
 // Middleware
 app.use(express.json())
 app.use(logger('dev'))
@@ -16,6 +15,7 @@ app.use((req, res, next) => {
 })
 
 // API Routes
+app.use('/api/shops', require('./routes/shops'))
 
 // Catch-all route
 app.get('*', (req, res) => {
